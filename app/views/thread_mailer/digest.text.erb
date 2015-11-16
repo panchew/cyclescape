@@ -2,11 +2,12 @@ There have been updates on <%= @threads_messages.count %> threads you are subscr
 
 <%- @threads_messages.each do |thread, messages| %>
 <%- @thread = thread %>
-----
-Updates on <%= raw @thread.title %>:
+======
+Updates on thread "<%= raw @thread.title %>"
+( <%= thread_url(@thread) %> ) :
 
 <%- messages.each do |message| %>
---
+---
 
 <%- @message = message %>
 <%= render partial: @message.notification_name.to_s %>
